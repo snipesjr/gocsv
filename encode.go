@@ -19,7 +19,7 @@ func newEncoder(out io.Writer) *encoder {
 	return &encoder{out}
 }
 
-func writeFromChan(writer CSVWriter, c <-chan interface{}, omitHeaders bool) error {
+func WriteFromChan(writer CSVWriter, c <-chan interface{}, omitHeaders bool) error {
 	// Get the first value. It wil determine the header structure.
 	firstValue, ok := <-c
 	if !ok {
